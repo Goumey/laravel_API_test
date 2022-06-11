@@ -35,10 +35,11 @@ class TopicalityController extends Controller
      * @param  \App\Models\Topicality  $topicality
      * @return \Illuminate\Http\Response
      */
-    public function show(Topicality $topicality)
+    public function show($id)
     {
 
-        return $topicality::find(1);
+
+        return Topicality::find($id);
     }
 
     /**
@@ -48,8 +49,19 @@ class TopicalityController extends Controller
      * @param  \App\Models\Topicality  $topicality
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Topicality $topicality)
+    public function update(Request $request, $id)
     {
+
+
+$topicality=Topicality::where('id',$id)->update([
+    'title'=>'first',
+    'content'=>'first comment'
+]);
+if ($topicality) {
+   return "modification reussie";
+} else {
+   return 'echec';
+}
 
     }
 
