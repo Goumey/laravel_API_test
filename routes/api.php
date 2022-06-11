@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource("topicality",'TopicalityController');
+Route::apiResource("topicality",TopicalityController::class);

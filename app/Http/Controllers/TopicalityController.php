@@ -15,7 +15,7 @@ class TopicalityController extends Controller
     public function index()
     {
   $topicalities=Topicality::all();
-  return $topicalities->toJson(JSON_PRETTY_PRINT);
+  return $topicalities;
     }
 
     /**
@@ -37,7 +37,8 @@ class TopicalityController extends Controller
      */
     public function show(Topicality $topicality)
     {
-        //
+
+        return $topicality::find(1);
     }
 
     /**
@@ -49,7 +50,7 @@ class TopicalityController extends Controller
      */
     public function update(Request $request, Topicality $topicality)
     {
-        //
+
     }
 
     /**
